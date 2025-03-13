@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
     <title>Student Profiles</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,7 +14,6 @@
             background: linear-gradient(to right, #87CEEB, #00BFFF);
             color: #333;
             overflow-y: scroll;
-            transition: background-color 0.3s, color 0.3s;
         }
         header {
             background: rgba(255, 255, 255, 0.9);
@@ -28,11 +27,12 @@
             margin: 20px 0;
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 15px; 
             color: #0072ff; 
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s, transform 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
         }
         nav a:hover {
             color: #00c6ff; 
@@ -40,18 +40,19 @@
         }
         section {
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(245, 245, 220, 0.9);
             margin: 20px auto;
             border-radius: 10px;
-            max-width: 800px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 90%; 
+            box-shadow: 0 4px 20px rgba(122, 105, 85);
         }
         h2 {
             color: #0072ff;
             border-bottom: 2px solid #0072ff;
             padding-bottom: 10px;
-            font-size: 1.8em;
+            font-size: 1.8em; 
             transition: color 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
         }
         h2:hover {
             color: #00c6ff;
@@ -59,7 +60,7 @@
         .profile-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-between; 
             max-height: 400px;
             overflow-y: auto;
             padding-right: 10px;
@@ -67,7 +68,7 @@
         .profile {
             border: 1px solid #0072ff;
             border-radius: 20px;
-            padding: 10px;
+            padding: 15px;
             margin: 10px;
             background: rgba(240, 240, 240, 0.9);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -75,34 +76,25 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: calc(33.33% - 20px);
-            height: 250px;
+            width: calc(30% - 20px); 
+            height: 320px; 
             text-align: center;
             animation: fadeIn 0.5s;
         }
-        .profile:hover {
-            transform: scale(1.05); 
-            box-shadow: 0 8px 30px rgba(0, 114, 255, 0.5);
-        }
         .profile img {
             width: 100%;
-            height: 140px;
+            height: 160px; 
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 10px;
             transition: transform 0.3s;
-        }
-        .profile img:hover {
-            transform: scale(1.1);
         }
         .profile h3 {
             margin: 0;
             color: #0072ff;
             font-size: 1.5em;
             transition: color 0.3s;
-        }
-        .profile h3:hover {
-            color: #00c6ff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
         }
         footer {
             text-align: center;
@@ -114,15 +106,29 @@
             width: 100%;
             margin-top: 20px;
         }
-        #filterInput {
-            width: 97%;
-            padding: 10px;
+        .search-container {
+            position: relative;
+            width: 100%;
             margin-bottom: 20px;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0056b3;
+            pointer-events: none;
+        }
+        #filterInput {
+            width: calc(100% - 50px);
+            padding: 10px 10px 10px 50px;
+            margin: 0;
             border: 1px solid #0072ff;
             border-radius: 5px;
             background: rgba(240, 240, 240, 0.9);
             color: #333;
             transition: border-color 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
         }
         #filterInput:focus {
             border-color: #00c6ff;
@@ -132,8 +138,9 @@
         .id-panel {
             display: none; 
             position: fixed;
-            width: 300px;
-            height: 400px;
+            width: 80%; 
+            max-width: 300px; 
+            height: auto; 
             background-color: rgba(255, 255, 255, 0.9); 
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             padding: 15px; 
@@ -144,9 +151,6 @@
             transform: translate(-50%, -50%);
             color: #000000;
             overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
         .id-panel.active {
             display: block;
@@ -164,10 +168,11 @@
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 5px 10px;
+            padding: 10px 15px; 
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             margin-top: 10px;
+            font-size: 1em; 
         }
         .open-btn:hover, .close-btn:hover {
             background-color: #00c6ff;
@@ -208,27 +213,18 @@
             background: #00c6ff;
         }
 
-                @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .profile {
-                width: calc(50% - 20px);
-            }
-        }
-        @media (max-width: 480px) {
-            .profile {
-                width: 100%;
-            }
-            section {
-                padding: 10px;
+                width: calc(100% - 20px);
+                height: auto;
+                margin: 10px 0;
             }
             h2 {
                 font-size: 1.5em;
             }
-            nav a {
-                margin: 0 5px;
-            }
             .open-btn, .close-btn {
-                font-size: 0.8em; 
-                padding: 5px;
+                padding: 8px 12px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -247,35 +243,38 @@
 
 <section id="profiles">
     <h2>Student Profiles</h2>
-    <input type="text" id="filterInput" placeholder="Search...">
+    <div class="search-container">
+        <input type="text" id="filterInput" placeholder="Search...">
+        <i class="fas fa-search search-icon"></i>
+    </div>
 
     <div class="profile-container">
-        <div class="profile" data-hobbies="Reading and Listening to Music" data-passion="Photography" data-age="16" data-birthday="May 8, 2008" data-sex="Female" data-status="Single" data-bg="url('aleya.jpg')">
-            <img src="ale.jpg" alt="Alliah May P. Urbano">
+        <div class="profile" data-hobbies="Reading and Listening to Music" data-passion="Photography" data-age="16" data-birthday="May 8, 2008" data-sex="Female" data-status="Single" data-bg="url('website/aleya.jpg')">
+            <img src="website/Alli.jpg" alt="Alliah May P. Urbano">
             <h3>Alliah May P. Urbano</h3>
             <button class="open-btn">Open</button>
         </div>
 
-        <div class="profile" data-hobbies="Playing Instruments" data-passion="Guitarist" data-age="16" data-birthday="June 28, 2008" data-sex="Female" data-status="Single" data-bg="url('Cassy.jpg')">
-            <img src="cass.jpg" alt="Cassandra Popanes">
+        <div class="profile" data-hobbies="Playing Instruments" data-passion="Guitarist" data-age="16" data-birthday="June 28, 2008" data-sex="Female" data-status="Single" data-bg="url('website/Cassy.jpg')">
+            <img src="website/cass.jpg" alt="Cassandra Popanes">
             <h3>Cassandra Popanes</h3>
             <button class="open-btn">Open</button>
         </div>
 
-        <div class="profile" data-hobbies="Reading Fictional Stories" data-passion="Teaching" data-age="16" data-birthday="Sept 15, 2008" data-sex="Female" data-status="Single" data-bg="url('Kate.jpg')">
-            <img src="keyt.jpg" alt="Kate Gabriele C. Villaruel">
+        <div class="profile" data-hobbies="Reading Fictional Stories" data-passion="Teaching" data-age="16" data-birthday="Sept 15, 2008" data-sex="Female" data-status="Single" data-bg="url('website/Kate.jpg')">
+            <img src="website/keyttttt.jpg" alt="Kate Gabriele C. Villaruel">
             <h3>Kate Gabriele C. Villaruel</h3>
             <button class="open-btn">Open</button>
         </div>
 
-        <div class="profile" data-hobbies="Cooking" data-passion="Photography" data-age="17" data-birthday="Dec 16, 2007" data-sex="Female" data-status="Single" data-bg="url('kamiis.jpg')">
-            <img src="kamiz.jpg" alt="Princess Kyle D. Kamis">
+        <div class="profile" data-hobbies="Cooking" data-passion="Photography" data-age="17" data-birthday="Dec 16, 2007" data-sex="Female" data-status="Single" data-bg="url('website/kamiis.jpg')">
+            <img src="website/kamiz.jpg" alt="Princess Kyle D. Kamis">
             <h3>Princess Kyle D. Kamis</h3>
             <button class="open-btn">Open</button>
         </div>
 
-        <div class="profile" data-hobbies="Playing Online Games" data-passion="Going to Gym/Fitness" data-age="17" data-birthday="Oct 24, 2007" data-sex="Male" data-status="Single" data-bg="url('john.jpg')">
-            <img src="Lucas.jpg" alt="Lucas Andrew E. Cabanday">
+        <div class="profile" data-hobbies="Playing Online Games" data-passion="Going to Gym/Fitness" data-age="17" data-birthday="Oct 24, 2007" data-sex="Male" data-status="Single" data-bg="url('website/Luk.jpg')">
+            <img src="website/Lucas.jpg" alt="Lucas Andrew E. Cabanday">
             <h3>Lucas Andrew E. Cabanday</h3>
             <button class="open-btn">Open</button>
         </div>
@@ -295,6 +294,7 @@
 <div id="idPanel" class="id-panel">
     <h2>Student ID</h2>
     <img id="idPanelImage" src="" alt="Student Image" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+    <h2 style="font-size: 1.2em;"></h2>
     <p id="idPanelDetails"></p>
     <button class="close-btn">Close</button>
 </div>
@@ -334,7 +334,7 @@
             
             idPanel.innerHTML = `
                 <h2>Student ID</h2>
-                <img id="idPanelImage" src="" alt="Student Image" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+                <img id="idPanelImage" src="${imgSrc}" alt="Student Image" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
                 <h2 style="font-size: 1.2em;">${name}</h2>
                 <p><strong>Age:</strong> ${age}</p>
                 <p><strong>Birthday:</strong> ${birthday}</p>
@@ -342,10 +342,12 @@
                 <p><strong>Status:</strong> ${status}</p>
                 <p><strong>Hobbies:</strong> ${hobbies}</p>
                 <p><strong>Passion:</strong> ${passion}</p>
+                <button class="close-btn">Close</button>
             `;
             
-            document.getElementById('idPanelImage').src = imgSrc;
             idPanel.style.backgroundImage = bgImage;
+            idPanel.style.backgroundSize = 'cover';
+            idPanel.style.backgroundPosition = 'center';
             
             idPanel.style.top = '50%';
             idPanel.style.left = '50%';
@@ -354,13 +356,13 @@
             idPanel.classList.add('active');
             idPanel.style.display = 'block'; 
             idPanel.style.opacity = '1'; 
-        });
-    });
 
-    const closeButton = document.querySelector('.close-btn');
-    closeButton.addEventListener('click', function(event) {
-        idPanel.classList.remove('active');
-        idPanel.style.display = 'none'
+            const closeButton = idPanel.querySelector('.close-btn');
+            closeButton.addEventListener('click', function() {
+                idPanel.classList.remove('active');
+                idPanel.style.display = 'none';
+            });
+        });
     });
 
     window.addEventListener('click', function(event) {
@@ -372,4 +374,4 @@
 </script>
 
 </body>
-</html>>
+</html>
